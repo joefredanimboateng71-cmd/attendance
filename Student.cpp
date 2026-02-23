@@ -6,10 +6,10 @@ Student::Student() {
     indexNumber = "";
     name = "";
     program = "";
-    yearLevel = 0;
+    yearLevel = "";
 }
 
-Student::Student(string idx, string nm, string prog, int year) {
+Student::Student(string idx, string nm, string prog, string year) {
     indexNumber = idx;
     name = nm;
     program = prog;
@@ -28,7 +28,7 @@ string Student::getProgram() const {
     return program;
 }
 
-int Student::getYearLevel() const {
+string Student::getYearLevel() const {
     return yearLevel;
 }
 
@@ -40,7 +40,7 @@ void Student::display() const {
 }
 
 string Student::toFileString() const {
-    return indexNumber + "|" + name + "|" + program + "|" + to_string(yearLevel);
+    return indexNumber + "|" + name + "|" + program + "|" + yearLevel;
 }
 
 Student Student::fromFileString(const string& line) {
@@ -52,5 +52,5 @@ Student Student::fromFileString(const string& line) {
     getline(ss, prog, '|');
     getline(ss, yearStr, '|');
 
-    return Student(idx, nm, prog, stoi(yearStr));
+    return Student(idx, nm, prog, yearStr);
 }

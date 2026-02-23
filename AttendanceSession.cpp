@@ -79,6 +79,6 @@ string AttendanceSession::toFileString() const {
         ss << record.first << "|" << record.second << "\n";
     }
 
-    ss << "END\n";
+    ss << "--------------------------------------------------------------------------------------------------\n";
     return ss.str();
 }

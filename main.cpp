@@ -18,7 +18,7 @@ bool studentExists(string indexNumber);
 
 int main() {
     loadStudents();
-
+    cout << "NEW VERSION 1.4";
     int choice;
 
     do {
@@ -62,7 +62,7 @@ void studentMenu() {
 
         if (choice == 1) {
             string idx, name, program;
-            int year;
+            string year;
 
             cout << "Index Number: ";
             cin >> idx;
@@ -123,12 +123,14 @@ void attendanceMenu() {
             int duration;
 
             cout << "Course Code: ";
-            cin >> code;
+            cin.ignore();
+            getline(cin,code);
             cout << "Date: ";
             cin >> date;
             cout << "Start Time: ";
-            cin >> time;
-            cout << "Duration (minutes): ";
+            cin.ignore();
+            getline(cin,time);
+            cout << "Duration: ";
             cin >> duration;
 
             AttendanceSession session(code, date, time, duration);

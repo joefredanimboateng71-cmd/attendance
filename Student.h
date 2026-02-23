@@ -9,16 +9,16 @@ private:
     string indexNumber;
     string name;
     string program;
-    int yearLevel;
+    string yearLevel;
 
 public:
     Student();
-    Student(string idx, string nm, string prog, int year);
+    Student(string idx, string nm, string prog, string year);
 
     string getIndexNumber() const;
     string getName() const;
     string getProgram() const;
-    int getYearLevel() const;
+    string getYearLevel() const;
 
     void display() const;
 
